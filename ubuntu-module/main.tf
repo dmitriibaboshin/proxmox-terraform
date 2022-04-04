@@ -20,7 +20,7 @@ provider "proxmox" {
   pm_tls_insecure = true
 }
 
-#Replace vars in Cloud Init Template file to terraform vars (from file or env. vars)
+#Copy vars from terraform vars file to Cloud Init Template
 data "template_file" "user_data" {
   template = file("${path.module}/files/cloud_init_template.cfg")
   vars = {
